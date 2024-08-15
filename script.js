@@ -1,10 +1,10 @@
-let checar =false , checar2 = false, checar3=false;
+let checar1 = false , checar2 = false, checar3=false;
 
 //função correspondente ao exercicio 1, chamada ao clicar no button
 function atividade1() {
-    checar=true;
-    checar2= false;
-    checar3= false;
+    checar1 = true;
+    checar2 = false;
+    checar3 = false;
 
     const questao = 'Digite um numero de 1 a 7 e descubra o dia da semana.';
     //mostra em tela a expressão do exercicio
@@ -15,10 +15,21 @@ function atividade1() {
     // Alterar a propriedade display para mostrar o input
     inputContainer.style.display = 'flex';
     document.getElementById('resultado').innerText = ""
+    checarResultado()
 
 }
 
-function resultado() {
+function checarResultado() {
+    if (checar1) {
+        resultado1();
+    } else if (checar2) {
+        resultado2();
+    } else if (checar3) {
+        resultado3();
+    }
+}
+
+function resultado1() {
     
     //converte o numero digitado no campo do imput em um número inteiro
     let num = parseInt(document.getElementById('userInput').value,10);
@@ -91,15 +102,7 @@ function limpar() {
     document.getElementById('questao').innerText = "";
 }
 
-function checarResultado() {
-    if (checar != false){
-        resultado();
-    }if (checar3 != false){
-        resultado3();
-    }else{
-        resultado2();
-    }
-}
+
 
 function atividade2() {
     checar2= true;
@@ -114,7 +117,7 @@ function atividade2() {
     // Alterar a propriedade display para mostrar o input
     inputContainer.style.display = 'flex';
     document.getElementById('resultado').innerText = ""
-
+    checarResultado();
 }
 
 
@@ -178,7 +181,7 @@ function atividade3() {
     // Alterar a propriedade display para mostrar o input
     inputContainer.style.display = 'flex';
     document.getElementById('resultado').innerText = ""
-
+    checarResultado();
 }
 
 function resultado3() {
